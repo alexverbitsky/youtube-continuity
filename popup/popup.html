@@ -5,9 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <style>
+    body {
+      width: 200px;
+      background-color: #22282b;
+      display: flex;
+    }
+    .content {
+      flex: 1;
+    }
+    .label-container {
+      display: flex;
+      justify-content: center;
+      padding: 10px;
+    }
+    .label-container label {
+      color: #ffffff;
+      text-align: center;
+    }
+  </style>
 </head>
 <body>
   
+  <div class="content">
+
+    <div class="label-container">
+      <label for="qrPlaceholder">Start watching youtube video to use this extension</label>
+    </div>
+
+    <div class="qr-container" id="qrPlaceholder"></div>
+
+  </div>
+
   <script src="popup.js"></script>
 </body>
 </html>
