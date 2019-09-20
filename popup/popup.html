@@ -19,24 +19,25 @@
       justify-content: center;
       padding: 10px;
     }
-    .label-container label {
+    .label-container label, .qr-container {
       color: #ffffff;
       text-align: center;
     }
   </style>
 </head>
 <body>
-  
+
   <div class="content">
 
     <div class="label-container">
-      <label for="qrPlaceholder">Start watching youtube video to use this extension</label>
+      <label for="qrPlaceholder" id="textLabel">Start watching youtube video to use this extension</label>
     </div>
 
-    <div class="qr-container" id="qrPlaceholder"></div>
+    <canvas class="qr-container" id="qrPlaceholder"></canvas>
 
   </div>
 
+  <script src="../lib/qrious.min.js.map"></script>
   <script src="popup.js"></script>
 </body>
 </html>
