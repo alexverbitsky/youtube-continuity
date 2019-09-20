@@ -4,4 +4,4 @@ chrome.runtime.onMessage.addListener((message, sender, callback) => {
   const currentTime = Number(player.currentTime);
   callback(Math.ceil(currentTime));
 
-})
+});

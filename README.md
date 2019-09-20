@@ -15,6 +15,5 @@ Continue watching your video from device using this chrome extension.
 
 ### Required features
 1. OOP
-1. QR live reload
 1. Memory leaks fixes
 1. Dynamic popup messages
