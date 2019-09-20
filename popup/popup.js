@@ -5,25 +5,26 @@ let canvasEl = null;
   canvasEl.setAttribute('id', 'qrPlaceholder');
 })();
 
-document.querySelector('body').addEventListener('click', () => {
-
+window.onload = () => {
   chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-    chrome.tabs.sendMessage(tabs[0].id, '', {}, timestamp => {
-    
-      const url = new URL(tabs[0].url);
-      const videoID = url.searchParams.get('v');
-
-      const resultLink = 'https://youtu.be/' + videoID + '?t=' + timestamp;
-
-      showQRCode(resultLink);
-
-    });
+    const currentTab = tabs[0];
+    updatePopUpView(currentTab);
+    setInterval(() => updatePopUpView(currentTab), 2000);
   });
 
-});
+};
+
+function updatePopUpView(tab) {
+  chrome.tabs.sendMessage(tab.id, '', {}, timestamp => {
+    const url = new URL(tab.url);
+    const videoID = url.searchParams.get('v');
+    const resultLink = `https://youtu.be/${videoID}?t=${timestamp}`;
+    showQRCode(resultLink);
+  });
+
+}
 
 function showQRCode(text) {
-
   document.getElementById('qrContainer').appendChild(canvasEl);
 
   new QRious({
