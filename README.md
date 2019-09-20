@@ -12,8 +12,3 @@ Continue watching your video from device using this chrome extension.
 1. To refresh extension code use refresh button on extensions list page
 1. To debug popup use "inspect popup" in popup context menu
 1. To debug content scripts use chrome dev tools -> Sources -> Content sctipts -> Youtube Continuity
-
-### Required features
-1. OOP
-1. Memory leaks fixes
-1. Dynamic popup messages
