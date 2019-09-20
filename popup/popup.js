@@ -1,21 +1,34 @@
-document.querySelector('body').addEventListener('click', event => {
+let canvasEl = null;
+
+(function createCanvas() {
+  canvasEl = document.createElement('canvas');
+  canvasEl.setAttribute('id', 'qrPlaceholder');
+})();
+
+document.querySelector('body').addEventListener('click', () => {
 
   chrome.tabs.query({active: true, currentWindow: true}, tabs => {
-    chrome.tabs.sendMessage(tabs[0].id, 'text', {}, function(timestamp) {
-      console.log(tabs)
-
-      const url = tabs[0].url;
-      const videoID = url.match(/watch\?v=(.*)/)[1];
+    chrome.tabs.sendMessage(tabs[0].id, '', {}, timestamp => {
+    
+      const url = new URL(tabs[0].url);
+      const videoID = url.searchParams.get('v');
 
       const resultLink = 'https://youtu.be/' + videoID + '?t=' + timestamp;
 
-      new QRious({
-        element: document.getElementById('qrPlaceholder'),
-        value: resultLink,
-      })
+      showQRCode(resultLink);
 
     });
   });
 
+});
 
-})
+function showQRCode(text) {
+
+  document.getElementById('qrContainer').appendChild(canvasEl);
+
+  new QRious({
+    element: canvasEl,
+    value: text,
+  });
+
+}
