@@ -1,7 +1,7 @@
 # Youtube Continuity
 
 <p align="center">
-  <img src="https://github.com/alexverbitsky/youtube-continuity/blob/master/images/icon-128.png" alt="Youtube Continuity"/>
+  <img src="https://github.com/alexverbitsky/youtube-continuity/blob/master/images/icon128.png" alt="Youtube Continuity"/>
 </p>
 
 Continue watching your video from device using this chrome extension.
