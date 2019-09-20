@@ -3,29 +3,32 @@
   "name": "Youtube Continuity",
   "version": "0.1",
   "icons": {
-    "16": "images/empty-16.png",
-    "32": "images/empty-32.png",
-    "48": "images/empty-48.png",
-    "64": "images/empty-64.png",
-    "128": "images/empty-128.png"
+    "16": "images/icon-16.png",
+    "32": "images/icon-32.png",
+    "48": "images/icon-48.png",
+    "64": "images/icon-64.png",
+    "128": "images/icon-128.png"
   },
-  "content_scripts": [
-    {
-      "matches": [ "https://*/","http://*/"],
-      "js": [ "content_scripts/end.js"],
-      "run_at": "document_end"
-    }
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "all_frames": true,
+    "js": ["content-scripts/content.js"]
+}],
+  "permissions": [
+    "http://*/",
+    "https://*/",
+    "tabs"
   ],
-  "permissions": ["http://*/","https://*/"],
   "browser_action": {
     "default_icon": {
-      "16": "images/empty-16.png",
-      "32": "images/empty-32.png",
-      "48": "images/empty-48.png",
-      "64": "images/empty-64.png",
-      "128": "images/empty-128.png"
+      "16": "images/icon-16.png",
+      "32": "images/icon-32.png",
+      "48": "images/icon-48.png",
+      "64": "images/icon-64.png",
+      "128": "images/icon-128.png"
     },
-    "default_title": "YC",
-    "default_popup": "popup/popup.html"
+    "default_title": "Youtube Continuity",
+    "default_popup": "popup/popup.html",
+    "content_security_policy": "script-src 'self' https://www.gstatic.com/; object-src 'self'"
   }
 }
