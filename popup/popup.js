@@ -2,7 +2,7 @@ const POPUP_MESSAGES = {
   scanQRCode: 'Scan QR code to continue watching',
   wrongPage: 'Start watching youtube video to use this extension',
 };
-const YOUTUBE_DOMAIN = 'www.youtube.com';
+const YOUTUBE_DOMAIN = 'www.youtube.com/watch';
 const RESULT_LINK = (videoID, timestamp) => `https://youtu.be/${videoID}?t=${timestamp}`;
 
 let labelEl = null;
