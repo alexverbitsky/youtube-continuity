@@ -1,13 +1,14 @@
 {
   "manifest_version": 2,
   "name": "Youtube Continuity",
-  "version": "1.0.0",
+  "version": "1.1.0",
+  "author": "Alex Verbitsky",
   "icons": {
-    "16": "images/icon-16.png",
-    "32": "images/icon-32.png",
-    "48": "images/icon-48.png",
-    "64": "images/icon-64.png",
-    "128": "images/icon-128.png"
+    "16": "images/icon16.png",
+    "32": "images/icon32.png",
+    "48": "images/icon48.png",
+    "64": "images/icon64.png",
+    "128": "images/icon128.png"
   },
   "content_scripts": [{
     "matches": ["<all_urls>"],
@@ -15,17 +16,16 @@
     "js": ["content-scripts/content.js"]
 }],
   "permissions": [
-    "http://*/",
-    "https://*/",
-    "tabs"
+    "https://www.youtube.com/*",
+    "activeTab"
   ],
   "browser_action": {
     "default_icon": {
-      "16": "images/icon-16.png",
-      "32": "images/icon-32.png",
-      "48": "images/icon-48.png",
-      "64": "images/icon-64.png",
-      "128": "images/icon-128.png"
+      "16": "images/icon16.png",
+      "32": "images/icon32.png",
+      "48": "images/icon48.png",
+      "64": "images/icon64.png",
+      "128": "images/icon128.png"
     },
     "default_title": "Youtube Continuity",
     "default_popup": "popup/popup.html",

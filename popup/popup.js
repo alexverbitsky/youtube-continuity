@@ -33,8 +33,12 @@ window.onload = () => {
 
 function updatePopUpView(tab) {
   chrome.tabs.sendMessage(tab.id, '', {}, timestamp => {
-    const link = createLink(tab, timestamp);
-    updateQRCode(link);
+
+    if (timestamp) {
+      const link = createLink(tab, timestamp);
+      updateQRCode(link);
+    }
+
   });
 }
 
